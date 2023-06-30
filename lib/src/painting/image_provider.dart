@@ -5,15 +5,16 @@ import 'package:dart_eval/dart_eval_bridge.dart';
 import 'package:flutter/painting.dart';
 
 class $ImageProvider implements ImageProvider, $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'ImageProvider'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'ImageProvider'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType(
       $type,
       isAbstract: true,
       generics: {
-        'T': BridgeGenericParam($extends: BridgeTypeRef.type(RuntimeTypes.objectType)),
+        'T': BridgeGenericParam(
+            $extends: BridgeTypeRef.type(RuntimeTypes.objectType)),
       },
     ),
     constructors: {},
@@ -51,7 +52,9 @@ class $ImageProvider implements ImageProvider, $Instance {
   }
 
   @override
-  Future<bool> evict({ImageCache? cache, ImageConfiguration configuration = ImageConfiguration.empty}) {
+  Future<bool> evict(
+      {ImageCache? cache,
+      ImageConfiguration configuration = ImageConfiguration.empty}) {
     return $value.evict(cache: cache, configuration: configuration);
   }
 
@@ -62,8 +65,10 @@ class $ImageProvider implements ImageProvider, $Instance {
 
   @override
   Future<ImageCacheStatus?> obtainCacheStatus(
-      {required ImageConfiguration configuration, ImageErrorListener? handleError}) {
-    return $value.obtainCacheStatus(configuration: configuration, handleError: handleError);
+      {required ImageConfiguration configuration,
+      ImageErrorListener? handleError}) {
+    return $value.obtainCacheStatus(
+        configuration: configuration, handleError: handleError);
   }
 
   @override
@@ -77,8 +82,8 @@ class $ImageProvider implements ImageProvider, $Instance {
   }
 
   @override
-  void resolveStreamForKey(
-      ImageConfiguration configuration, ImageStream stream, Object key, ImageErrorListener handleError) {
+  void resolveStreamForKey(ImageConfiguration configuration, ImageStream stream,
+      Object key, ImageErrorListener handleError) {
     $value.resolveStreamForKey(configuration, stream, key, handleError);
   }
 
@@ -88,11 +93,16 @@ class $ImageProvider implements ImageProvider, $Instance {
     // ignore: deprecated_member_use
     return $value.load(key, decode);
   }
+
+  @override
+  ImageStreamCompleter loadImage(Object key, ImageDecoderCallback decode) {
+    return $value.loadImage(key, decode);
+  }
 }
 
 class $NetworkImage implements $Instance {
-  static const $type =
-      BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'NetworkImage'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type, isAbstract: false, $extends: $ImageProvider.$type),
@@ -101,11 +111,22 @@ class $NetworkImage implements $Instance {
         BridgeFunctionDef(
           returns: BridgeTypeAnnotation($type),
           params: [
-            BridgeParameter('src', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.stringType)), false),
+            BridgeParameter(
+                'src',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.stringType)),
+                false),
           ],
           namedParams: [
-            BridgeParameter('scale', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.doubleType)), true),
-            BridgeParameter('headers', BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)), true),
+            BridgeParameter(
+                'scale',
+                BridgeTypeAnnotation(
+                    BridgeTypeRef.type(RuntimeTypes.doubleType)),
+                true),
+            BridgeParameter(
+                'headers',
+                BridgeTypeAnnotation(BridgeTypeRef.type(RuntimeTypes.mapType)),
+                true),
           ],
         ),
       ),
@@ -126,7 +147,8 @@ class $NetworkImage implements $Instance {
     final url = args[0]?.$value ?? '';
     runtime.assertPermission('network', url);
     return $NetworkImage.wrap(
-      NetworkImage(url, scale: args[1]?.$value ?? 1.0, headers: args[2]?.$value),
+      NetworkImage(url,
+          scale: args[1]?.$value ?? 1.0, headers: args[2]?.$value),
     );
   }
 
@@ -148,7 +170,8 @@ class $NetworkImage implements $Instance {
 }
 
 class $MemoryImage implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'MemoryImage'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'MemoryImage'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type, isAbstract: false, $extends: $ImageProvider.$type),
@@ -159,7 +182,8 @@ class $MemoryImage implements $Instance {
           params: [
             BridgeParameter(
               'data',
-              BridgeTypeAnnotation(BridgeTypeRef(CoreTypes.list, [BridgeTypeRef.type(RuntimeTypes.intType)])),
+              BridgeTypeAnnotation(BridgeTypeRef(
+                  CoreTypes.list, [BridgeTypeRef.type(RuntimeTypes.intType)])),
               false,
             ),
           ],
@@ -212,7 +236,8 @@ class $MemoryImage implements $Instance {
 }
 
 class $ResizeImage implements $Instance {
-  static const $type = BridgeTypeRef(BridgeTypeSpec('package:flutter/src/painting/image_provider.dart', 'ResizeImage'));
+  static const $type = BridgeTypeRef(BridgeTypeSpec(
+      'package:flutter/src/painting/image_provider.dart', 'ResizeImage'));
 
   static const $declaration = BridgeClassDef(
     BridgeClassType($type),

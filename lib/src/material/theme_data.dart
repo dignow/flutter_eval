@@ -31,7 +31,6 @@ class $ThemeData implements $Instance {
           BridgeParameter('selectedRowColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
           BridgeParameter('unselectedWidgetColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
           BridgeParameter('disabledColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
-          BridgeParameter('buttonColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
           BridgeParameter('secondaryHeaderColor', BridgeTypeAnnotation($Color.$type, nullable: true), true),
           // TYPOGRAPHY & ICONOGRAPHY
           BridgeParameter('textTheme', BridgeTypeAnnotation($TextTheme.$type, nullable: true), true),
@@ -57,7 +56,6 @@ class $ThemeData implements $Instance {
         'selectedRowColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
         'unselectedWidgetColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
         'disabledColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
-        'buttonColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
         'secondaryHeaderColor': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($Color.$type))),
         'textTheme': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
         'primaryTextTheme': BridgeMethodDef(BridgeFunctionDef(returns: BridgeTypeAnnotation($TextTheme.$type))),
@@ -86,7 +84,7 @@ class $ThemeData implements $Instance {
       selectedRowColor: args[13]?.$value,
       unselectedWidgetColor: args[14]?.$value,
       disabledColor: args[15]?.$value,
-      buttonColor: args[16]?.$value,
+      // 16 button color for old material
       secondaryHeaderColor: args[17]?.$value,
       textTheme: args[18]?.$value,
       primaryTextTheme: args[19]?.$value,
@@ -130,8 +128,6 @@ class $ThemeData implements $Instance {
         return $Color.wrap($value.unselectedWidgetColor);
       case 'disabledColor':
         return $Color.wrap($value.disabledColor);
-      case 'buttonColor':
-        return $Color.wrap($value.buttonColor);
       case 'secondaryHeaderColor':
         return $Color.wrap($value.secondaryHeaderColor);
       case 'textTheme':
