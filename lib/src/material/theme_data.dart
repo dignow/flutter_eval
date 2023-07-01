@@ -84,10 +84,9 @@ class $ThemeData implements $Instance {
       selectedRowColor: args[13]?.$value,
       unselectedWidgetColor: args[14]?.$value,
       disabledColor: args[15]?.$value,
-      // 16 button color for old material
-      secondaryHeaderColor: args[17]?.$value,
-      textTheme: args[18]?.$value,
-      primaryTextTheme: args[19]?.$value,
+      secondaryHeaderColor: args[16]?.$value,
+      textTheme: args[17]?.$value,
+      primaryTextTheme: args[18]?.$value,
     ));
   }
 
